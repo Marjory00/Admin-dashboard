@@ -24,13 +24,15 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import 'hammerjs';
 import { ComponentsComponent } from './components/components.component';
 import { ComponentsComponent } from './components/components.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [	
     AppComponent,
     DashboardComponent,
     ComponentsComponent,
-      ComponentsComponent
+      ComponentsComponent,
+      NavbarComponent
    ],
   imports: [
     BrowserModule,
