@@ -1,14 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~@angular/material/theming';
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.scss';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import './scss/_variables.scss';
 
 // Include non-theme styles for core.
 @include mat-core();
 
 // Define a theme.
-$primary: mat-palette($mat-grey);
+$primary: mat-palette($mat-grey, 100); // setting value to primary
 $accent:  mat-palette($mat-light-blue, 600, 300, 600);
 $warn:    mat-palette($mat-deep-orange, 300, 500, 800);
 
@@ -19,5 +19,11 @@ body {
   padding: 0;
   margin: 0;
   font-family: Roboto, sans-serif;
-
 }
+  html {
+    margin: 0 auto;
+    height: 100% !important;
+
+  }
+
+
