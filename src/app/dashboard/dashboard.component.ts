@@ -1,33 +1,104 @@
-import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { Component, OnInit } from '@angular/core';
+import * as Chartist from 'chartist';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
+export class DashboardComponent implements OnInit{
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+
+  constructor() { }
+  startAnimationForLineChart(chart){
+    let seq: any, delays: any, durations: any;
+    seq = 0;
+    delays = 80;
+    durations = 500;
+
+chart.on('draw', function(data) {
+  if(data.type === 'line' || data.type === 'area') {
+data.element.animate({
+  d: {
+    begin: 600,
+    duration: 700,
+    from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+to: data.path.clone().stringify(),
+easing: Chartist.Svg.Easing.easeOutQuint
+  }
+});
+  } else if(data.type === 'point') {
+seq++;
+data.element.animate({
+  opacity: {
+begin: seq * delays,
+dur: durations,
+from: 0,
+to: 1,
+easing: 'ease'
+
+  }
+});
+
+  }
+});
+
+seq = 0;
+  };
+  startAnimationForBarChart(chart){
+let seq2: any, delays2: any, durations2: any;
+seq2 = 0;
+delays2 = 80;
+durations2 = 500;
+chart.on('draw', function(data) {
+  if(data.type === 'bar'){
+seq2++;
+data.element.animate({
+opacity: {
+  begin: seq2 * delays2,
+  dur: durations2,
+  from: 0,
+  to: 1,
+  easing: 'ease'
 }
+});
+  }
+});
+
+seq2 = 0;
+  };
+
+  ngOnInit() {
+    /*  Daily Sales Chart Initialization for Documentation */
+
+    const dataDailySalesChart: any = {
+labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+series: [
+  [12, 17, 7, 17, 23, 18, 38]
+]
+    };
+
+const optionsDailySalesChart: any = {
+  linesSmooth: Chartist.Interpolation.cardinal({
+    tension: 0
+  }),
+low: 0,
+high: 50, // recommended: set the high sa the biggest value + something for a better look
+chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
+}
+
+var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart);
+
+this.startAnimationForLineChart(dailySalesChart);
+
+
+/* Completed Tasks Chart Initialization */
+
+
+
+
+  }
+
+  }
+

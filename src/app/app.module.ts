@@ -22,13 +22,16 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 import 'hammerjs';
+import { ComponentsComponent } from './components/components.component';
+import { ComponentsComponent } from './components/components.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     DashboardComponent,
-
-  ],
+    ComponentsComponent,
+      ComponentsComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
