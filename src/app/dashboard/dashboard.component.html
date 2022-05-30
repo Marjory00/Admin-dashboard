@@ -1,5 +1,23 @@
-<div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
+<div class="main-content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-3 col-md-6 col-sm-6">
+  <div class="card card-stats">
+<div clas="card-header card-header-warning card-header-icon">
+
+  <div class="card-icon">
+<i class="material-icons">content1</i>
+</div>
+<p class="card-category">Selection</p>
+<h3 card="card-title">Selector</h3>
+
+
+</div>
+  </div>
+</div>
+</div>
+</div>
+
   <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
@@ -21,4 +39,4 @@
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
-</div>
+
