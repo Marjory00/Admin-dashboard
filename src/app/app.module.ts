@@ -1,3 +1,8 @@
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { TableListComponent } from './table-list/table-list.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { MapsComponent } from './maps/maps.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -6,33 +11,36 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgChartsModule } from 'ng2-charts';
 
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { ComponentsModule } from './components/components.module';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
-import { MatMenuModule } from '@angular/material/menu';
+
 
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 import 'hammerjs';
-import { ComponentsComponent } from './components/components.component';
-import { ComponentsComponent } from './components/components.component';
-import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [				
     AppComponent,
     DashboardComponent,
-    ComponentsComponent,
-      ComponentsComponent,
-      NavbarComponent
+    AdminLayoutComponent,
+      MapsComponent,
+      NotificationsComponent,
+      TableListComponent,
+      UserProfileComponent
    ],
   imports: [
     BrowserModule,
@@ -41,12 +49,12 @@ import { NavbarComponent } from './navbar/navbar.component';
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
-    MatSidenavModule,
+    HttpClientModule,
+    RouterModule,
     MatIconModule,
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     FormsModule,
