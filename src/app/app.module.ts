@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
@@ -40,7 +41,8 @@ import 'hammerjs';
       MapsComponent,
       NotificationsComponent,
       TableListComponent,
-      UserProfileComponent
+      UserProfileComponent,
+      HomeComponent
    ],
   imports: [
     BrowserModule,

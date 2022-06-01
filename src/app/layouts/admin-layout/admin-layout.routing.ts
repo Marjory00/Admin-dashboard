@@ -8,7 +8,6 @@ import { TableListComponent } from 'src/app/table-list/table-list.component';
 import { UserProfileComponent } from 'src/app/user-profile/user-profile.component';
 
 
-
 export const AdminLayoutRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'user-profile', component: UserProfileComponent },
