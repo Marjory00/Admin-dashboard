@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -21,7 +21,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
@@ -29,8 +28,9 @@ import { MatCardModule } from '@angular/material/card';
 
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-
+import { MatListModule } from '@angular/material/list';
 import 'hammerjs';
+
 
 @NgModule({
   declarations: [
@@ -63,6 +63,7 @@ import 'hammerjs';
     RouterModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ ]
 })
 export class AppModule { }
