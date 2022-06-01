@@ -1,14 +1,14 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TableListComponent } from './table-list/table-list.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { MapsComponent } from './maps/maps.component';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+
 import { NgChartsModule } from 'ng2-charts';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -33,7 +33,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import 'hammerjs';
 
 @NgModule({
-  declarations: [				
+  declarations: [
     AppComponent,
     DashboardComponent,
     AdminLayoutComponent,
@@ -47,6 +47,7 @@ import 'hammerjs';
     AppRoutingModule,
     NgChartsModule,
     LayoutModule,
+    ComponentsModule,
     MatToolbarModule,
     MatButtonModule,
     HttpClientModule,
@@ -59,6 +60,7 @@ import 'hammerjs';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
