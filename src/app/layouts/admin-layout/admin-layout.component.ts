@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
-import { Router, NavigationEnd, NavigationStart } from '@angular/router';
+import { Router, NavigationEnd, NavigationStart, ActivatedRoute } from '@angular/router';
 import  PerfectScrollbar  from 'perfect-scrollbar';
 import * as $ from "jquery";
 import { filter, Subscription } from 'rxjs';
@@ -13,14 +13,24 @@ import { filter, Subscription } from 'rxjs';
   styleUrls: ['./admin-layout.component.scss']
 })
 export class AdminLayoutComponent implements OnInit {
-  private _router: Subscription;
-  private lastPoppedUrl: string;
+  private _router: Subscription = new Subscription;
+  private route: ActivatedRoute = new ActivatedRoute;
+  private lastPoppedUrl: string | undefined;
   private yScrollStack: number[] = [];
 
   constructor( public location: Location,
     private router: Router) { }
 
+
   ngOnInit() {
+    const path = this.route.snapshot.queryParams['path'];
+    const navigateTo = '/' + path;
+
+    if (path)
+
+
+
+
     const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
     if (isWindows && !document.getElementsByTagName('body')[0].classList.contains('sidebar-mini')) {
@@ -37,6 +47,7 @@ document.getElementsByTagName('body')[0].classList.add('perfect-scrollbar-on');
     this.location.subscribe((ev:PopStateEvent) => {
       this.lastPoppedUrl = ev.url;
     });
+
     this.router.events.subscribe((event:any) => {
 if (event instanceof NavigationStart) {
 if (event.url != this.lastPoppedUrl)

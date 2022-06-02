@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from './home/home.component';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -64,8 +64,10 @@ import 'hammerjs';
     ReactiveFormsModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+  //{provide: 'BaseURL', useValue: baseURL}
+],
   bootstrap: [AppComponent],
-  schemas: [ ]
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }
