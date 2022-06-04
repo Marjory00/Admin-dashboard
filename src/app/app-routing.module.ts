@@ -4,14 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
-import { AuthGuard } from './core/auth.guard';
+import { Auth } from './core/auth.guard';
+
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
     import ('./admin/admin.module').then( (m) => m.AdminModule ),
-    canActivate: [AuthGuard],
+    canActivate: [Auth],
   },
   {
     path: 'login',
@@ -20,9 +21,8 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: PageNotFoundComponent
+    component: PageNotFoundComponent,
   },
-
 ];
 
 
