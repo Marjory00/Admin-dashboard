@@ -1,12 +1,50 @@
-import { Directive } from '@angular/core';
-
+import { Directive, AfterContentInit, OnDestroy, QueryList, ContentChildren } from '@angular/core';
+import { MatTabGroup } from '@angular/material/tabs';
+import { Subscription } from 'rxjs';
+import { NavigationEnd, Router } from '@angular/router';
+import { RouterTab } from './router-tab.directive';
 
 
 @Directive({
-  selector: '[appRouterTabs]'
+  selector: '[routerTabs]'
 })
-export class RouterTabsDirective {
+export class RouterTabs implements AfterContentInit, OnDestroy {
+subscription = new Subscription();
 
-  constructor() { }
 
-}
+  @ContentChildren(RouterTab)
+  routerTabs!: QueryList<RouterTab>;
+  setIndex: any;
+
+
+  constructor(
+    private host: MatTabGroup,
+    private router: Router)
+ { }
+
+ ngOnDestroy(): void {
+  this.subscription.unsubscribe();
+ }
+
+  ngAfterContentInit(): void {
+    throw new Error('Method not implemented.');
+
+    this.setIndex();
+    this.subscription.add(
+      this.router.events.subscribe(e => {
+        if (e instanceof NavigationEnd) {
+          this.setIndex();
+        }
+      })
+    );
+
+    this.subscription.add(
+
+
+    )
+
+  }
+
+ }
+
+

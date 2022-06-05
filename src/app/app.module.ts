@@ -3,8 +3,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -12,22 +10,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import 'hammerjs';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
-import { RouterTabComponent } from './shared/router-tab/router-tab.component';
-import { NavbarComponent } from './layout/navbar/navbar.component';
-import { FooterComponent } from './layout/footer/footer.component';
-import { SidebarComponent } from './layout/sidebar/sidebar.component';
 
+import { TopNavComponent } from './layout/top-nav/top-nav.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { NgChartsModule } from 'ng2-charts';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from '@angular/flex-layout';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-       PageNotFoundComponent,
-       RouterTabComponent,
-       NavbarComponent,
-       FooterComponent,
-       SidebarComponent
+      AppComponent,
+
    ],
   imports: [
     NgModule,
@@ -36,9 +32,8 @@ import { NgChartsModule } from 'ng2-charts';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CoreModule,
-    SharedModule,
     NgChartsModule,
+    CoreModule,
     RouterModule.forRoot([
 
     ])
