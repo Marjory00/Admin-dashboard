@@ -14,8 +14,6 @@ subscription = new Subscription();
 
   @ContentChildren(RouterTab)
   routerTabs!: QueryList<RouterTab>;
-  setIndex: any;
-
 
   constructor(
     private host: MatTabGroup,
@@ -27,7 +25,7 @@ subscription = new Subscription();
  }
 
   ngAfterContentInit(): void {
-    throw new Error('Method not implemented.');
+   // throw new Error('Method not implemented.');
 
     this.setIndex();
     this.subscription.add(
@@ -39,12 +37,23 @@ subscription = new Subscription();
     );
 
     this.subscription.add(
-
-
-    )
-
+      this.host.selectedTabChange.subscribe(() => {
+        const tab = this.routerTabs.find(item => item.tab.isActive);
+        if (!tab) {
+          return;
+        }
+        this.router.navigateByUrl(tab.link.urlTree);
+        return true;
+      })
+    );
   }
 
- }
-
-
+  private setIndex() {
+    this.routerTabs.find((tab, i) => {
+      if (!this.router.isActive(tab.link.urlTree: false)) return false;
+      tab.tab.isActive = true;
+      this.host.selectedIndex = i;
+      return true;
+    });
+  }
+  }

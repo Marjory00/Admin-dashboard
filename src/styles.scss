@@ -6,6 +6,8 @@
 @import '~mdb-ui-kit/css/mdb.min.css';
 
 
+
+
 // Include non-theme styles for core.
 @include mat-core();
 
@@ -20,7 +22,7 @@ $warn:    mat-palette($mat-deep-orange, 300, 500, 800);
 body {
   padding: 0;
   margin: 0;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto, "sans-serif", "Helvetica Neue";
 }
   html {
     margin: 0 auto;
