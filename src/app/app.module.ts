@@ -15,7 +15,9 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 import { RouterTabComponent } from './shared/router-tab/router-tab.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { TopNavComponent } from './layout/top-nav/top-nav.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -25,7 +27,7 @@ import { TopNavComponent } from './layout/top-nav/top-nav.component';
        RouterTabComponent,
        NavbarComponent,
        FooterComponent,
-       TopNavComponent
+       SidebarComponent
    ],
   imports: [
     NgModule,
@@ -36,6 +38,7 @@ import { TopNavComponent } from './layout/top-nav/top-nav.component';
     HttpClientModule,
     CoreModule,
     SharedModule,
+    NgChartsModule,
     RouterModule.forRoot([
 
     ])
