@@ -1,3 +1,5 @@
+import { HomeComponent } from './home/home.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -33,6 +35,7 @@ import { CoreModule } from '@angular/flex-layout';
     HttpClientModule,
     NgChartsModule,
     CoreModule,
+
     RouterModule.forRoot([
 
     ])

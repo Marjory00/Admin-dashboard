@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -10,8 +11,14 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HomeComponent } from './home/home.component';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+
+
 @NgModule({
-  declarations: [HomeComponent],
+
   imports: [
     CommonModule,
     DashboardRoutingModule,
@@ -20,7 +27,15 @@ import { HomeComponent } from './home/home.component';
     MatCardModule,
     MatTableModule,
     MatButtonModule,
-    MatIconModule
-  ]
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatTooltipModule
+  ],
+  declarations: [
+    HomeComponent
+
+  ],
 })
 export class DashboardModule { }
