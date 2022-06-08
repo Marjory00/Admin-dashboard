@@ -27,8 +27,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { NgChartsModule } from 'ng2-charts/ng2-charts';
 
-import { ChartsModule } from './admin/charts/charts.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import { ChartsModule } from './admin/charts/charts.module';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ChartsModule,
+    NgChartsModule,
     CoreModule,
 
     RouterModule.forRoot([
