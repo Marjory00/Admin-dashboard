@@ -1,0 +1,31 @@
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        Doughnut Chart
+      </mat-card-title>
+      <mat-card-content>
+        <canvas id="app-donut-chart" width="500" type="radar" height="200"
+        baseChart
+        [datasets]="doughnutChartData"
+        [labels]="doughnutChartLabels"
+        [options]="doughnutChartOptions"
+        [legend]="doughnutChartLegend"
+        [chartType]="doughnutChartType"
+        [data]="doughnutChartData"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+
+
+
+        <chart class="dashchart" [type]="doughnut-chart" [data]="data"
+        [options]="options"></chart>
+
+      </canvas>
+
+      </mat-card-content>
+    </mat-card-header>
+
+
+  </mat-card>
+

@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   showItems() {
-    this.items = [0, 1, 2, 3, 4];
+    this.items = [ ];
   }
 
   hideItems() {

@@ -1,3 +1,4 @@
+import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -6,7 +7,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import 'hammerjs';
@@ -27,7 +28,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { NgChartsModule } from 'ng2-charts/ng2-charts';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -46,27 +47,21 @@ import { NgChartsModule } from 'ng2-charts/ng2-charts';
     HttpClientModule,
     NgChartsModule,
     CoreModule,
+    FlexLayoutModule,
+
 
     RouterModule.forRoot([
 
     ]),
 
     MatGridListModule,
-
     MatCardModule,
-
     MatMenuModule,
-
     MatIconModule,
-
     MatButtonModule,
-
     LayoutModule,
-
     MatToolbarModule,
-
     MatSidenavModule,
-
     MatListModule
   ],
   providers: [
