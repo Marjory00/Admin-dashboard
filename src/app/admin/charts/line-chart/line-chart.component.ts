@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./line-chart.component.scss']
 })
 export class LineChartComponent implements OnInit {
+  lineChartData: Array<any>= [
+    {
 
+    }
+  ]
   constructor() { }
 
   ngOnInit(): void {

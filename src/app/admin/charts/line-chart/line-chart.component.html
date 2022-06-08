@@ -4,7 +4,7 @@
         Line Chart
       </mat-card-title>
       <mat-card-content>
-        <canvas #myBarChart width="500" type="radar" height="200"
+        <canvas #myLineChart width="500" type="radar" height="200"
         baseChart
         [datasets]="barChartData"
         [labels]="barChartLabels"
@@ -17,7 +17,7 @@
 
 
 
-        <chart class="dashchart" [type]="bar-chart" [data]="data"
+        <chart class="dashchart" [type]="line-chart" [data]="data"
         [options]="options"></chart>
 
       </canvas>

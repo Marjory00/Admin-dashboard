@@ -13,12 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import 'hammerjs';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
-import { TopNavComponent } from './layout/top-nav/top-nav.component';
-import { FooterComponent } from './layout/footer/footer.component';
-import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from '@angular/flex-layout';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -30,17 +27,30 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { NgChartsModule } from 'ng2-charts';
 import { baseURL } from './shared/baseurl';
-import { TablesComponent } from './layout/tables/tables.component';
+
+import { NavbarComponent } from './components/navbar/navbar.component';
+
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { IconsComponent } from './icons/icons.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { MapsComponent } from './maps/maps.component';
+import { TableListComponent } from './table-list/table-list.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
       AppComponent,
-      SideNavComponent,
-      AdminDashboardComponent,
-      TopNavComponent,
-      FooterComponent,
+
       PageNotFoundComponent,
-      TablesComponent
+
+      NavbarComponent,
+      AdminLayoutComponent,
+      DashboardComponent,
+       IconsComponent,
+       NotificationsComponent,
+       MapsComponent,
+       TableListComponent,
+       UserProfileComponent
 
    ],
   imports: [

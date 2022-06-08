@@ -1,0 +1,51 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+
+
+    <mat-toolbar>Dashboard</mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item routerLink="{{routes.DASHBOARD}}" routerLinkActive="active">
+<mat-icon>text_fields</mat-icon>Dashboard</mat-list-item>
+
+<mat-list-item routerLink="{{routes.LOGIN}}" routerLinkActive="active">
+  <mat-icon>text_fields</mat-icon>Login</mat-list-item>
+
+  <mat-list-item routerLink="{{routes.MAPS}}" routerLinkActive="active">
+    <mat-icon>maps</mat-icon>Maps</mat-list-item>
+
+    <mat-list-item routerLink="{{routes.NOTIFICATIONS}}" routerLinkActive="active">
+      <mat-icon>notifications_none</mat-icon>Notifications</mat-list-item>
+
+      <mat-list-item routerLink="{{routes.TABLES}}" routerLinkActive="active">
+        <mat-icon>border_all</mat-icon>Tables</mat-list-item>
+
+        <mat-list-item routerLink="{{routes.USERPROFILE}}" routerLinkActive="active">
+          <mat-icon>text_fields</mat-icon>User-Profile</mat-list-item>
+
+
+      </a>href="#">Dashboard</a>
+      <a mat-list-item href="#">Sales</a>
+      <a mat-list-item href="#">Orders</a>
+      <a mat-list-item href="#">Customers</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Admin-dashboard</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <app-dashboard></app-dashboard>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
