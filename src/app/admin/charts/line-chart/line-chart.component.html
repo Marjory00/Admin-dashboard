@@ -1,1 +1,29 @@
-<p>line-chart works!</p>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        Bar Chart
+      </mat-card-title>
+      <mat-card-content>
+        <canvas #myBarChart width="500" type="radar" height="200"
+        baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"
+        [data]="barChartData"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+
+
+
+        <chart class="dashchart" [type]="bar-chart" [data]="data"
+        [options]="options"></chart>
+
+      </canvas>
+      </mat-card-content>
+    </mat-card-header>
+
+  </mat-card>
+

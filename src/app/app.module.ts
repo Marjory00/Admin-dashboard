@@ -19,6 +19,7 @@ import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from '@angular/flex-layout';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -36,6 +37,7 @@ import { NgChartsModule } from 'ng2-charts';
       AppComponent,
       DashboardComponent,
       SideNavComponent,
+      AdminDashboardComponent
 
    ],
   imports: [

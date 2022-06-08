@@ -9,6 +9,8 @@ import { Chart } from 'chart.js';
 })
 export class BarChartComponent implements OnInit, AfterViewInit {
   @ViewChild('myBarChart') myBarChart!: ElementRef<HTMLCanvasElement>;
+  chart!: Chart;
+
   private barChartOptions: any = {
     scaleShowVerticalLines: false,
     responsive: true
@@ -30,9 +32,17 @@ export class BarChartComponent implements OnInit, AfterViewInit {
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
   ];
 
-  // added
+  constructor() { }
+  ngAfterViewInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
-  type = 'bar-chart';
+  ngOnInit() {
+
+  }
+
+
+  type = 'bar-chart'
   data = {
     labels: ["January", "February", "March", "April", "May"],
     datasets: [
@@ -42,51 +52,15 @@ export class BarChartComponent implements OnInit, AfterViewInit {
         backgroundColor: ["#8a3ab9", "#4c68d7","#cd486b","#fbad50","#bc2a8d"],
         data: [2478,5267,734,784,433]
       }
-    ]
-  };
+    ],
 
-options = {
-  legend: {
-    display: true
-},
-  responsive: true,
-  maintainAspectRatio: false,
-  scales: {
-    xAxes: [
-      { display: true,
-                gridLines: {
-                    display:false
-                }
-            }],
-    yAxes: [
-      {
-                display: true,
-                gridLines: {
-                    display:false
-                }
-            }]
-}
-}
-      // Above Added
-
-  constructor() { }
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
-
-  ngOnInit() {}
-
-
-    // Events
 
   chartClicked(e: any): void {
     console.log(e.active);
     console.log(e.event);
   }
-
+}
   chartHovered(e: any): void {
     console.log(e);
   }
 }
-
