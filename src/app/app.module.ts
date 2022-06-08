@@ -1,4 +1,3 @@
-import { HomeComponent } from './home/home.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,14 +15,26 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
-import { NgChartsModule } from 'ng2-charts';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from '@angular/flex-layout';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { LayoutModule } from '@angular/cdk/layout';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
+import { ChartsModule } from './admin/charts/charts.module';
 
 @NgModule({
   declarations: [
       AppComponent,
+      DashboardComponent,
+      SideNavComponent,
 
    ],
   imports: [
@@ -33,12 +44,30 @@ import { CoreModule } from '@angular/flex-layout';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgChartsModule,
+    ChartsModule,
     CoreModule,
 
     RouterModule.forRoot([
 
-    ])
+    ]),
+
+    MatGridListModule,
+
+    MatCardModule,
+
+    MatMenuModule,
+
+    MatIconModule,
+
+    MatButtonModule,
+
+    LayoutModule,
+
+    MatToolbarModule,
+
+    MatSidenavModule,
+
+    MatListModule
   ],
   providers: [
   //{provide: 'BaseURL', useValue: baseURL}

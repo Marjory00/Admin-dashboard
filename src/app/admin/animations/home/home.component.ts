@@ -1,13 +1,19 @@
-import { Component, OnInit, Optional } from '@angular/core';
-import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
-
+import { Component, OnInit } from '@angular/core';
+import {
+  trigger,
+  transition,
+  style,
+  animate,
+  query,
+  stagger
+} from '@angular/animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [
-    trigger('ListAnimation', [
+    trigger('listAnimation', [
       transition('* => *', [
         query(
           ':enter',
@@ -30,8 +36,8 @@ import { trigger, transition, style, animate, query, stagger } from '@angular/an
             stagger(
               '100ms',
               animate(
-               '500ms ease-out',
-               style({ opacity: 0, transform: 'translateY(-15px)' })
+                '500ms ease-out',
+                style({ opacity: 0, transform: 'translateY(-15px)' })
               )
             )
           ],
@@ -42,14 +48,10 @@ import { trigger, transition, style, animate, query, stagger } from '@angular/an
       ])
     ])
   ]
-
 })
-
 export class HomeComponent implements OnInit {
   items = [];
-
-  constructor() { }
-
+  constructor() {}
 
   showItems() {
     this.items = [0, 1, 2, 3, 4];
@@ -64,5 +66,4 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {}
-
-  }
+}
