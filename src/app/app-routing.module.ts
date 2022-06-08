@@ -1,3 +1,4 @@
+import { DashboardPageComponent } from './dashboard/containers/dashboard-page/dashboard-page.component';
 import { TablesModule } from './tables/tables/tables.module';
 
 import { NgModule } from '@angular/core';
@@ -6,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { AuthGuard } from './core/auth.guard';
-import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 import { LoginComponent } from './login/login/login.component';
 
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: 'dashboard',
   pathMatch: 'full',
   canActivate: [AuthGuard],
-  component: DashboardComponent
+  component: DashboardPageComponent
   },
 
   {

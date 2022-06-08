@@ -37,16 +37,16 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { TableListComponent } from './table-list/table-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { NotificationComponent } from './notification/notification/notification.component';
-
+import { NotificationPageComponent } from './notification/containers/notification-page/notification-page.component';
+import { DashboardPageComponent } from './dashboard/containers/dashboard-page/dashboard-page.component';
 
 @NgModule({
   declarations: [
       AppComponent,
 
       PageNotFoundComponent,
+      NotificationPageComponent
 
-      NavbarComponent,
 
       DashboardComponent,
        IconsComponent,
@@ -54,7 +54,7 @@ import { NotificationComponent } from './notification/notification/notification.
        MapsComponent,
        TableListComponent,
        UserProfileComponent,
-       NotificationComponent,
+       DashboardPageComponent,
 
 
    ],
