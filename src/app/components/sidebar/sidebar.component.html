@@ -13,25 +13,35 @@
 <mat-list-item routerLink="{{routes.LOGIN}}" routerLinkActive="active">
   <mat-icon>text_fields</mat-icon>Login</mat-list-item>
 
-  <mat-list-item routerLink="{{routes.MAPS}}" routerLinkActive="active">
-    <mat-icon>maps</mat-icon>Maps</mat-list-item>
+<mat-list-item routerLink="{{routes.NOTIFICATION}}" routerLinkActive="active">
+  <mat-icon>notification_none</mat-icon>Notification</mat-list-item>
 
-    <mat-list-item routerLink="{{routes.NOTIFICATIONS}}" routerLinkActive="active">
-      <mat-icon>notifications_none</mat-icon>Notifications</mat-list-item>
+<mat-list-item routerLink="{{routes.TABLES}}" routerLinkActive="active">
+  <mat-icon>border_all</mat-icon>Tables</mat-list-item>
 
-      <mat-list-item routerLink="{{routes.TABLES}}" routerLinkActive="active">
-        <mat-icon>border_all</mat-icon>Tables</mat-list-item>
+ <mat-list-item routerLink="{{routes.USERPROFILE}}" routerLinkActive="active">
+  <mat-icon>text_fields</mat-icon>User-Profile</mat-list-item>
 
-        <mat-list-item routerLink="{{routes.USERPROFILE}}" routerLinkActive="active">
-          <mat-icon>text_fields</mat-icon>User-Profile</mat-list-item>
+  <mat-list-item (click)="openUiElements()">
+<mat-icon>filter_none</mat-icon>UI Elements
+  </mat-list-item>
 
+  <div>
+   <mat-list-item class="ui-element" routerLink="{{routes.UI_ELEMENTS_ICONS}}" routerLinkActive="active">
+     <div class="circle"> </div>Icons
+      </mat-list-item>
 
-      </a>href="#">Dashboard</a>
-      <a mat-list-item href="#">Sales</a>
-      <a mat-list-item href="#">Orders</a>
-      <a mat-list-item href="#">Customers</a>
+ <mat-list-item class="ui-element" routerLink="{{routes.UI_ELEMENTS_CHARTS}}" routerLinkActive="active">
+    <div class="circle"></div>Charts
+    </mat-list-item>
+
+<mat-list-item class="ui-element" routerLink="{{routes.UI_ELEMENTS_MAP}}" routerLinkActive="active">
+<div class="circle"></div>Map
+</mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
+
+
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button

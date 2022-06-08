@@ -1,24 +1,37 @@
+import { TablesModule } from './tables/tables/tables.module';
 
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes, CanActivate } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { AuthGuard } from './core/auth.guard';
-
-import { HomeComponent } from './admin/animations/home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { LoginComponent } from './login/login/login.component';
 
 const routes: Routes = [
 
 
-  { path: 'login', component: LoginComponent},
+  { path: 'dashboard',
+  pathMatch: 'full',
+  canActivate: [AuthGuard],
+  component: DashboardComponent
+  },
 
-  { path: 'footer', component: HomeComponent},
+  {
+  path: 'tables',
+  pathMatch: 'full',
+  canActivate: [AuthGuard],
+  loadChildren: () => import('./tables/tables/tables.module').then(m => m.TablesModule)
+  },
 
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-
+  {
+    path: 'notification',
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./tables/tables/tables.module').then(m => m.TablesModule)
+    },
   {
    path: '',
   loadChildren: () =>

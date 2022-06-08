@@ -1,3 +1,4 @@
+import { NotificationModule } from './notification/notification.module';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
@@ -32,10 +33,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { IconsComponent } from './icons/icons.component';
-import { NotificationsComponent } from './notifications/notifications.component';
+
 import { MapsComponent } from './maps/maps.component';
 import { TableListComponent } from './table-list/table-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { NotificationComponent } from './notification/notification/notification.component';
+
 
 @NgModule({
   declarations: [
@@ -44,13 +47,15 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
       PageNotFoundComponent,
 
       NavbarComponent,
-      AdminLayoutComponent,
+
       DashboardComponent,
        IconsComponent,
-       NotificationsComponent,
+
        MapsComponent,
        TableListComponent,
-       UserProfileComponent
+       UserProfileComponent,
+       NotificationComponent,
+
 
    ],
   imports: [
