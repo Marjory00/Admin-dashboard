@@ -39,6 +39,10 @@ import { TableListComponent } from './table-list/table-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NotificationPageComponent } from './notification/containers/notification-page/notification-page.component';
 import { DashboardPageComponent } from './dashboard/containers/dashboard-page/dashboard-page.component';
+import { DateMenuComponent } from './ui-elements/date-menu/date-menu.component';
+import { SettingsMenuComponent } from './ui-elements/settings-menu/settings-menu.component';
+import { HeaderComponent } from './header/header.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +59,10 @@ import { DashboardPageComponent } from './dashboard/containers/dashboard-page/da
        TableListComponent,
        UserProfileComponent,
        DashboardPageComponent,
+       DateMenuComponent,
+       SettingsMenuComponent,
+       HeaderComponent,
+       LayoutComponent,
 
 
    ],

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -9,4 +9,4 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule
   ]
 })
-export class AdminLayoutModule { }
+export class UiElementsRoutingModule { }

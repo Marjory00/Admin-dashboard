@@ -2,7 +2,7 @@ import { DashboardPageComponent } from './dashboard/containers/dashboard-page/da
 import { TablesModule } from './tables/tables/tables.module';
 
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes, CanActivate } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
@@ -31,13 +31,13 @@ const routes: Routes = [
     path: 'notification',
     pathMatch: 'full',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./tables/tables/tables.module').then(m => m.TablesModule)
+    loadChildren: () => import('./notification/notification.module').then(m => m.NotificationModule)
     },
   {
-   path: '',
-  loadChildren: () =>
- import ('./admin/admin.module').then( (m) => m.AdminModule ),
-canActivate: [AuthGuard],
+   path: 'ui',
+   canActivate: [AuthGuard],
+  loadChildren: () => import ('./ui-elements/ui-elements/ui-elements.module').then( (m) => m.UiElementsModule),
+
  },
  {
   path: 'login',
