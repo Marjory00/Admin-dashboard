@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
+
 
 @Component({
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
   styleUrls: ['./bar-chart.component.scss']
 })
-export class BarChartComponent implements OnInit {
+export class BarChartComponent implements OnInit, AfterViewInit {
+  @ViewChild('myBarChart') myBarChart!: ElementRef<HTMLCanvasElement>;
   private barChartOptions: any = {
     scaleShowVerticalLines: false,
     responsive: true
@@ -68,6 +70,9 @@ options = {
       // Above Added
 
   constructor() { }
+  ngAfterViewInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
 
   ngOnInit() {}

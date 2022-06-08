@@ -17,7 +17,6 @@ interface Place {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  places: Array<Place> = [];
 
 
   constructor() { }
