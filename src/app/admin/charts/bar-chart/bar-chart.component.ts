@@ -33,6 +33,7 @@ export class BarChartComponent implements OnInit, AfterViewInit {
   ];
 
   constructor() { }
+
   ngAfterViewInit(): void {
     throw new Error('Method not implemented.');
   }

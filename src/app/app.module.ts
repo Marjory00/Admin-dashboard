@@ -18,7 +18,6 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from '@angular/flex-layout';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
@@ -30,14 +29,18 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { NgChartsModule } from 'ng2-charts';
-
+import { baseURL } from './shared/baseurl';
+import { TablesComponent } from './layout/tables/tables.component';
 
 @NgModule({
   declarations: [
       AppComponent,
-      DashboardComponent,
       SideNavComponent,
-      AdminDashboardComponent
+      AdminDashboardComponent,
+      TopNavComponent,
+      FooterComponent,
+      PageNotFoundComponent,
+      TablesComponent
 
    ],
   imports: [
@@ -50,7 +53,9 @@ import { NgChartsModule } from 'ng2-charts';
     NgChartsModule,
     CoreModule,
     FlexLayoutModule,
-
+    SharedModule,
+    MatInputModule,
+    FormsModule,
 
     RouterModule.forRoot([
 
@@ -67,7 +72,7 @@ import { NgChartsModule } from 'ng2-charts';
     MatListModule
   ],
   providers: [
-  //{provide: 'BaseURL', useValue: baseURL}
+  {provide: 'BaseURL', useValue: baseURL}
 ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
