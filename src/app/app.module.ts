@@ -8,14 +8,14 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import 'hammerjs';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 import { SharedModule } from './shared/shared.module';
-import { CoreModule } from '@angular/flex-layout';
+
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
@@ -29,9 +29,7 @@ import { MatListModule } from '@angular/material/list';
 import { NgChartsModule } from 'ng2-charts';
 import { baseURL } from './shared/baseurl';
 
-import { NavbarComponent } from './components/navbar/navbar.component';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { IconsComponent } from './icons/icons.component';
 
 import { MapsComponent } from './maps/maps.component';
@@ -41,13 +39,14 @@ import { NotificationPageComponent } from './notification/containers/notificatio
 import { DashboardPageComponent } from './dashboard/containers/dashboard-page/dashboard-page.component';
 import { DateMenuComponent } from './ui-elements/date-menu/date-menu.component';
 import { SettingsMenuComponent } from './ui-elements/settings-menu/settings-menu.component';
-import { HeaderComponent } from './header/header.component';
+
 import { LayoutComponent } from './layout/layout.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
       AppComponent,
-
       PageNotFoundComponent,
       NotificationPageComponent
 
@@ -63,6 +62,8 @@ import { LayoutComponent } from './layout/layout.component';
        SettingsMenuComponent,
        HeaderComponent,
        LayoutComponent,
+       NavbarComponent,
+       SidebarComponent,
 
 
    ],
@@ -74,8 +75,7 @@ import { LayoutComponent } from './layout/layout.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgChartsModule,
-    CoreModule,
-    FlexLayoutModule,
+
     SharedModule,
     MatInputModule,
     FormsModule,
