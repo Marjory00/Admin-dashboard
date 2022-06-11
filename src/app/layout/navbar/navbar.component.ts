@@ -8,10 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  sidebarToggled: any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+toggleSidebar() {
+  this.sidebarToggled.emit();
+}
 }

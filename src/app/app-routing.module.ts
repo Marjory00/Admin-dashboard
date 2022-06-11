@@ -1,9 +1,11 @@
+
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { DashboardPageComponent } from './dashboard/containers/dashboard-page/dashboard-page.component';
 import { TablesModule } from './tables/tables/tables.module';
 
-import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { AuthGuard } from './core/auth.guard';

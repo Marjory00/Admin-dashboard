@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularMaterialModule } from './angular-material/angular-material.module';
 
 import 'hammerjs';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
@@ -40,7 +41,6 @@ import { DashboardPageComponent } from './dashboard/containers/dashboard-page/da
 import { DateMenuComponent } from './ui-elements/date-menu/date-menu.component';
 import { SettingsMenuComponent } from './ui-elements/settings-menu/settings-menu.component';
 
-import { LayoutComponent } from './layout/layout.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 
@@ -48,33 +48,21 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
   declarations: [
       AppComponent,
       PageNotFoundComponent,
-      NotificationPageComponent
-
-
-      DashboardComponent,
-       IconsComponent,
-
-       MapsComponent,
-       TableListComponent,
-       UserProfileComponent,
-       DashboardPageComponent,
-       DateMenuComponent,
-       SettingsMenuComponent,
-       HeaderComponent,
-       LayoutComponent,
-       NavbarComponent,
-       SidebarComponent,
-
+      NotificationPageComponent,
+      SidebarComponent,
+      NavbarComponent
 
    ],
   imports: [
     NgModule,
     BrowserModule,
+    AngularMaterialModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
     NgChartsModule,
+    MatCardModule,
 
     SharedModule,
     MatInputModule,
